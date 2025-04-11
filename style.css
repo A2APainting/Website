@@ -60,8 +60,10 @@ body::before {
   background-color: rgba(0, 0, 0, 1); /* light background for contrast */
   padding: 2rem;
   margin: 2rem auto;
-  max-width: 200px;
+  max-width: 250px;
   border-radius: 8px;
+  
+
 }
   #contact {
     background-color: rgba(0, 0, 0, 1); /* light background for contrast */
@@ -87,4 +89,29 @@ body::before {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
- 
+  @media (max-width: 600px) {
+    body {
+      font-size: 16px;
+    }
+  
+    #services {
+      max-width: 90%;
+      padding: 1.5rem;
+    }
+  
+    #services ul {
+      padding-left: 1.2rem;
+    }
+  
+    #services li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+  
+    nav {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+  }
+  
