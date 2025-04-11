@@ -1,56 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="stylesheet" href="style.css" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ann Arbor Acclaimed Painting</title>
-</head>
+/* ===== Base Styles ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  text-align: center;
 
+  background-image: url("Background1.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
-<body>
-  <header>
-    <h1>Acclaimed Painting</h1>
-    <p>"NOT ALL PAINTERS ARE CREATED EQUAL" <br> 
-      Ann Arbor's Premier Full Service <br>
-      Residential and Commercial Painter <br>
-      Operating with Integrity for over 35 years!
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .2);
+  z-index: -1;
+}
 
-    </p>
-  </header>
+/* ===== Header ===== */
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
 
-  <nav>
-    <a href="https://www.facebook.com/acclaimedpaintingannarbor/" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://g.page/r/Cc_iCD1Uq5EJEAI/review" target="_blank" rel="noopener noreferrer">Review on Google</a>
-    <a href="#contact">Contact</a>
-  </nav>
+/* ===== Navigation ===== */
+nav {
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  text-align: center;
+}
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Interior Painting</li>
-      <li>Exterior Painting</li>
-      <li>Commercial & Residential</li>
-      <li>Pressure Washing</li>
-    </ul>
-  </section>
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding: 1rem 1.5rem;
+  margin: 0.3rem;
+  border-radius: 10px;
+  background-color: rgba(222, 0, 251, 0.2);
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
 
-  <section id="gallery">
-    <h2></h2>
-    <img src="ACPBanner.jpg" alt="Recent painting project" class="gallery-image" />
-  </section>
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Call or Text Bob at (734) 709-2902</p>
-    <p>Email: a2acclaimedpainting@gmail.com </p>
-    <p>Serving Ann Arbor and surrounding areas.</p>
-  </section>
+/* ===== Sections ===== */
+section {
+  padding: 2rem;
+}
 
-  <footer>
-    <p>&copy; 2025 Acclaimed Painting. <br>All rights reserved. <br> (734) 709-2902
-    </p>
-  </footer>
-  
-</body>
-</html>
+#services {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  width: 90%;
+  border-radius: 8px;
+  text-align: left;
+  color: #fff;
+}
+
+#services h2 {
+  text-align: center;
+}
+
+#services ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+#services li {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* ===== Contact Section ===== */
+#contact {
+  background-color: rgba(0, 0, 0, .5);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+
+/* ===== Gallery ===== */
+#gallery {
+  text-align: center;
+}
+
+.gallery-image {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ===== Mobile Optimization ===== */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+
+  nav a {
+    font-size: 2.2rem;
+    padding: 1.2rem 1.5rem;
+    width: 85%;
+    max-width: 320px;
+  }
+
+  #services {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  #services li {
+    font-size: 1.1rem;
+  }
+}
