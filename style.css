@@ -4,6 +4,7 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   line-height: 1.6;
   color: #fff;
+  text-align: center; /* This centers inline text and block elements inside body */
 
   background-image: url("Background1.png");
   background-size: cover;
@@ -22,24 +23,31 @@ header {
 }
 
 nav {
-  background: #eee;
+  background: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
+  flex-wrap: wrap; /* allows wrapping on small screens */
   padding: 1rem;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0); /* semi-transparent black */
 }
 
-nav a {
-  color: rgb(149, 0, 255);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem; /* larger text */
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  background-color: rgba(255, 255, 255, 0.1); /* soft button-like background */
-  transition: background-color 0.3s ease;
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center; /* keeps nav links centered */
+  }
+
+  nav a {
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    padding: 1rem;
+    text-align: center;
+  }
 }
 
 nav a:hover {
@@ -57,95 +65,6 @@ nav a:hover {
 
   nav {
     flex-direction: column;
-    gap: 1rem;
-  }
-}
-
-
-
-
-section {
-  padding: 2rem;
-}
-
-footer {
-
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.1); /* dark transparent overlay */
-  z-index: -1;
-}
-
-#services {
-  background-color: rgba(0, 0, 0, 1); /* light background for contrast */
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 250px;
-  border-radius: 8px;
-  
-
-}
-  #contact {
-    background-color: rgba(0, 0, 0, 1); /* light background for contrast */
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 800px;
-    border-radius: 8px;  
-    text-align: center;
-
-  }
-
-  #gallery {
-    text-align: center; /* This will center all content inside the #gallery */
-  }
-  
-
-  .gallery-image {
-  
-    max-width: 100%;
-    height: auto;
-    margin: 1rem 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  @media (max-width: 600px) {
-    body {
-      font-size: 16px;
-    }
-  
-    #services {
-      max-width: 90%;
-      padding: 1.5rem;
-    }
-  
-    #services ul {
-      padding-left: 1.2rem;
-    }
-  
-    #services li {
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-  
-    nav {
-      flex-direction: column;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-  }
-  
     gap: 1rem;
   }
 }
