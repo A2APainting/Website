@@ -37,14 +37,21 @@
     <img src="ACPBanner.jpg" alt="Recent painting project" class="gallery-image" />
   </section>
 
-  <section id="contact">
-    <h2>Join Our Email List</h2>
-    <form action="https://formsubmit.co/a2acclaimedpainting@gmail.com" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
-    <p>Your email will never be shared.</p>
-  </section>
+<section id="contact">
+  <h2>Join Our Email List</h2>
+  <form action="https://formsubmit.co/a2acclaimedpainting@gmail.com" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    
+    <!-- Hidden field to redirect back to your homepage after submitting -->
+    <input type="hidden" name="_next" value="https://a2apainting.github.io/Website/">
+    
+    <!-- Honeypot field to reduce spam -->
+    <input type="text" name="_honey" style="display:none">
+    
+    <button type="submit">Subscribe</button>
+  </form>
+  <p>Your email will never be shared.</p>
+</section>
 
   <footer>
     <p>&copy; 2025 Acclaimed Painting. All rights reserved. <br> (734) 709-2902</p>
