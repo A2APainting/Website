@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ann Arbor Acclaimed Painting</title>
   <link rel="stylesheet" href="style.css" />
+  <script>
+    function redirectToThankYouPage() {
+      window.location.href = "https://a2acclaimedpainting.com/thankyou.html";
+    }
+  </script>
 </head>
 
 <body>
@@ -50,7 +55,7 @@
 
   <section id="contact">
     <h2>Join Our Email List</h2>
-    <form action="https://formsubmit.co/a2acclaimedpainting@gmail.com" method="POST">
+    <form action="https://formsubmit.co/a2acclaimedpainting@gmail.com" method="POST" onsubmit="redirectToThankYouPage()">
       <input type="email" name="email" placeholder="Enter your email" required>
       <input type="hidden" name="_next" value="https://a2acclaimedpainting.com/thankyou.html">
       <input type="text" name="_honey" style="display:none">
