@@ -50,13 +50,12 @@
 
   <section id="contact">
     <h2>Join Our Email List</h2>
-    <form id="contactForm">
+    <form action="https://formsubmit.co/a2acclaimedpainting@gmail.com" method="POST">
       <input type="email" name="email" placeholder="Enter your email" required>
       <input type="hidden" name="_next" value="https://a2acclaimedpainting.com">
       <input type="text" name="_honey" style="display:none">
       <button type="submit">Subscribe</button>
     </form>
-    <div id="thankYouMsg" style="display:none;">Thanks for submitting!</div>
     <p>Your email will never be shared.</p>
   </section>
 
@@ -66,24 +65,5 @@
       <a href="tel:17347092902">734 - 709 - 2902</a>
     </p>
   </footer>
-
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-
-      fetch("https://formsubmit.co/a2acclaimedpainting@gmail.com", {
-        method: "POST",
-        body: new FormData(form)
-      }).then(response => {
-        if (response.ok) {
-          form.style.display = "none";
-          document.getElementById("thankYouMsg").style.display = "block";
-        } else {
-          alert("Something went wrong.");
-        }
-      });
-    });
-  </script>
 </body>
 </html>
