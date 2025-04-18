@@ -50,12 +50,16 @@
 
   <section id="contact">
     <h2>Join Our Email List</h2>
-    <form action="https://formsubmit.co/a2acclaimedpainting@gmail.com" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required>
+    <form id="emailForm" action="https://formsubmit.co/a2acclaimedpainting@gmail.com" method="POST">
+      <input type="email" name="email" id="email" placeholder="Enter your email" required>
       <input type="hidden" name="_next" value="https://www.a2acclaimedpainting.com/thank-you.html">
       <input type="text" name="_honey" style="display:none">
       <button type="submit">Subscribe</button>
     </form>
+    <div id="thankYouMsg" style="display:none;">
+      <h3>Thank you for subscribing!</h3>
+      <p>We've received your email: <span id="userEmail"></span></p>
+    </div>
     <p>Your email will never be shared.</p>
   </section>
 
@@ -65,6 +69,27 @@
       <a href="tel:+17347092902">734 - 709 - 2902</a>
     </p>
   </footer>
+
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      
+      // Send form data to FormSubmit
+      fetch("https://formsubmit.co/a2acclaimedpainting@gmail.com", {
+        method: "POST",
+        body: new FormData(e.target)
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById('emailForm').style.display = 'none';
+          document.getElementById('thankYouMsg').style.display = 'block';
+          document.getElementById('userEmail').textContent = email;
+        } else {
+          alert('Something went wrong.');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
