@@ -4,13 +4,30 @@
   <meta charset="UTF-8">
   <title>Thank You!</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Redirect after 10 seconds -->
-  <meta http-equiv="refresh" content="10;url=https://www.a2acclaimedpainting.com">
+  <script>
+    // Countdown function
+    let countdownTime = 10; // Time in seconds
+    function updateCountdown() {
+      // Update the countdown display
+      document.getElementById('countdown').textContent = countdownTime;
+      // Decrement the countdown time
+      if (countdownTime > 0) {
+        countdownTime--;
+      } else {
+        // Redirect when countdown finishes
+        window.location.href = "https://www.a2acclaimedpainting.com";
+      }
+    }
+
+    // Call updateCountdown every second
+    setInterval(updateCountdown, 1000);
+  </script>
 </head>
 <body>
   <header>
     <h1>Thank You!</h1>
     <p>Your message has been received. We'll be in touch soon.</p>
+    <p>You will be redirected in <span id="countdown">10</span> seconds.</p>
   </header>
 
   <footer>
@@ -19,3 +36,4 @@
   </footer>
 </body>
 </html>
+
