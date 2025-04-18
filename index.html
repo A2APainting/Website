@@ -56,10 +56,13 @@
       <input type="text" name="_honey" style="display:none">
       <button type="submit">Subscribe</button>
     </form>
+
+    <!-- Hidden Thank You Message (visible after form submission) -->
     <div id="thankYouMsg" style="display:none;">
       <h3>Thank you for subscribing!</h3>
       <p>We've received your email: <span id="userEmail"></span></p>
     </div>
+
     <p>Your email will never be shared.</p>
   </section>
 
@@ -70,25 +73,11 @@
     </p>
   </footer>
 
+  <!-- Optional script to show thank-you message after form submission -->
   <script>
-    document.getElementById('emailForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const email = document.getElementById('email').value;
-      
-      // Send form data to FormSubmit
-      fetch("https://formsubmit.co/a2acclaimedpainting@gmail.com", {
-        method: "POST",
-        body: new FormData(e.target)
-      }).then(response => {
-        if (response.ok) {
-          document.getElementById('emailForm').style.display = 'none';
-          document.getElementById('thankYouMsg').style.display = 'block';
-          document.getElementById('userEmail').textContent = email;
-        } else {
-          alert('Something went wrong.');
-        }
-      });
+    document.getElementById('emailForm').addEventListener('submit', function() {
+      document.getElementById('emailForm').style.display = 'none'; // Hide the form
+      document.getElementById('thankYouMsg').style.display = 'block'; // Show thank you message
     });
   </script>
 </body>
