@@ -57,7 +57,7 @@
       <button type="submit">Subscribe</button>
     </form>
 
-    <!-- Hidden Thank You Message (visible after form submission) -->
+    <!-- Thank You Message -->
     <div id="thankYouMsg" style="display:none;">
       <h3>Thank you for subscribing!</h3>
       <p>We've received your email: <span id="userEmail"></span></p>
@@ -73,12 +73,6 @@
     </p>
   </footer>
 
-  <!-- Optional script to show thank-you message after form submission -->
-  <script>
-    document.getElementById('emailForm').addEventListener('submit', function() {
-      document.getElementById('emailForm').style.display = 'none'; // Hide the form
-      document.getElementById('thankYouMsg').style.display = 'block'; // Show thank you message
-    });
-  </script>
 </body>
 </html>
+
